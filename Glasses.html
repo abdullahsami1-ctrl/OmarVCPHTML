@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Omar's Second Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobile friendly -->
+  <style>
+    html {
+      scroll-padding-top: 190px; /* Prevent sticky header from covering anchor targets */
+    }
+
+    body { 
+      font-family: Arial; 
+      margin: 0; 
+      background: #f4f4f4; 
+      transition: background 0.5s, color 0.5s; 
+      padding-top: 190px; 
+    }
+
+    #topbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #222;
+      color: #fff;
+      z-index: 9999;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      animation: slideDown 1s ease-out;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    header { text-align: center; padding: 20px; }
+    nav { background: #444; text-align: center; padding: 10px; }
+
+    nav a {
+      color: white; 
+      margin: 15px; 
+      text-decoration: none; 
+      font-weight: bold; 
+      transition: color 0.3s;
+      display: inline-block;
+    }
+
+    nav a:hover { 
+      text-decoration: underline; 
+      color: orange; 
+    }
+	
+    section { 
+      padding: 50px; 
+      max-width: 1000px; 
+      margin: auto; 
+      background: white; 
+      margin-top: 20px; 
+      border-radius: 10px; 
+    }
+
+    table { 
+      width: 100%; 
+      border-collapse: collapse; 
+    }
+
+    th, td { 
+      padding: 10px; 
+      border: 1px solid #ddd; 
+      text-align: center; 
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: orange;
+      text-decoration: underline;
+    }
+
+    textarea, input, select { 
+      width: 100%; 
+      padding: 10px; 
+      margin-top: 10px; 
+    }
+
+
+    progress { width: 100%; height: 20px; }
+
+    blockquote { 
+      font-style: italic; 
+      color: #555; 
+      border-left: 5px solid #ccc; 
+      padding-left: 10px; 
+    }
+
+    .dark-mode { background: #222; color: #eee; }
+    .dark-mode section { background: #333; color: #eee; }
+    h1, h2, h3 { animation: fadeIn 2s ease-in; }
+
+    @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+
+    /* Mobile Friendly Nav */
+    @media (max-width: 500px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div id="topbar">
+  <header>
+    <h1>Glasses for the Visually Challenged</h1>
+    
+    <button onclick="toggleDarkMode()" style="padding:10px; background:orange; color:white; border:none; cursor:pointer; border-radius:5px;">Toggle Dark / Light Mode</button>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+	<a href="#Usage">Usage</a>
+    <a href="#MR">Materials Required</a>
+    <a href="#Code">Code</a>
+    
+  </nav>
+</div>
+
+<section id="home" style="text-align:center; background:#333; color:white;">
+  <h1>Welcome the Second project - Glasses for the Visually Challenged</h1>
+  <p>Click below to dive into the deep details of this project</p>
+  <a href="#Usage" style="background:red; color:white; padding:15px; text-decoration:none; border-radius:5px;">Start Exploring</a>
+</section>
+
+<section id="Usage">
+  <h3><strong>Usage</strong></h3>
+  <p>This project is mainly dedicated to the people who do not have as good as eyeseight as we do,</p>
+  <p>That is why i have created these pair of glasses for the visually challenged.</p>
+  <h3><strong>Working</strong></h3>
+  <p>When the Ultrasonic sensor senses the object by the reflection of Ultrasonic waves it sends the current to the arduino which then strats beeping and the buzzer starts vibrationg alerting the person to swich directions. </p>
+</section>
+
+<section id="MR">
+  <h2><strong>Materials Required</strong></h2>
+
+  <table>
+    <tr><th>Component</th><th>Sections</th><th>Usage/Working</th><th>Model</th></tr>
+    <tr><td>Arduino</td><td>Digital pins, Analog pins, Power Pins</td><td>Arduino is an open-source electronics platform based on easy-to-use hardware and software.It is also known as <i>'the brain of the robot'</i></td><td> NANO </tr>
+    <tr><td>Ultsonic sensor</td><td>GND, VCC, Echo, Trig</td><td>Ultrasonic sensors are electronic devices that determine a target's distance. They work by emitting ultrasonic sound waves and converting those waves into electrical signals.</td><td>HC-SR04</tr>
+    <tr><td>Buzzer</td><td>+, -</td><td>A buzzer or beeper is an audio signaling device, which may be mechanical, electromechanical, or piezoelectric (piezo for short).</td><td>piezoelectric (piezo for short).</td></tr>
+  </table><br>
+ 
+ <h2><strong>Connections</strong></h2>
+ <h6>*The connections in a table is inappropriate and unadvised to use therefore I have directly uploaded an image for your reference.</h6>
+<img src="https://rawcdn.githack.com/abdullahsami1-ctrl/OmarVCPicture/097d5a4d89a10c8f56060bf16d95baee26d9f53a/UBV_Circuit_Diagram.jpg" alt="Circuit of Automated pet feeder" width="500" height="300">
+</section>
+
+<section id="Code">
+<h1><strong>Code</strong></h1>
+<h3>Rules for the code</h3>
+<ol>
+<li>Copy and paste this code in the Arduino coding software.</li>
+<li>Connect the cable of the Arduino to the Adruino.</li>
+<li>Check the code by clicking on the Verify button(✅).</li>
+<li>Execute the code by clickin on the upload button(➡️).</li>
+</ol>
+<h4>If you want to function the project by using a battery first execute the code then connect a 9 volt battery to the other cable using a battery cap.</h4>
+<br>
+<h2>Code<h2>
+<br>
+<hr>
+
+<p>#define trigPin 2      // Ultrasonic sensor TRIG pin</p>
+<p>#define echoPin 3      // Ultrasonic sensor ECHO pin</p>
+<p>#define buzzerPin 4    // Buzzer pin</p>
+<br>
+<p>long duration;</p>
+<p>int distance;</p>
+<br>
+<p>void setup() {</p>
+  <p>pinMode(trigPin, OUTPUT);</p>
+  <p>pinMode(echoPin, INPUT);</p>
+  <p>pinMode(buzzerPin, OUTPUT);</p>
+  <p>Serial.begin(9600);</p>
+<p>}</p>
+<br>
+<p>void loop() {</p>
+  <p>// Trigger ultrasonic pulse</p>
+  <p>digitalWrite(trigPin, LOW);</p>
+  <p>delayMicroseconds(2);</p>
+  <p>digitalWrite(trigPin, HIGH);</p>
+  <p>delayMicroseconds(10);</p>
+  <p>digitalWrite(trigPin, LOW);</p>
+<br>
+  <p>// Read echo</p>
+  <p>duration = pulseIn(echoPin, HIGH);</p>
+  <p>distance = duration * 0.034 / 2; // Convert to cm</p>
+<br>
+  <p>Serial.print("Distance: ");</p>
+  <p>Serial.print(distance);</p>
+  <p>Serial.println(" cm");</p>
+<br>
+  <p>// Obstacle detection with buzzer intensity control</p>
+  <p>if (distance > 0 && distance <= 250) {</p>
+    <p>// The closer the obstacle, the faster the buzzer</p>
+    <p>int delayTime = map(distance, 1, 50, 170, 400); // 1cm=very fast, 20cm=slow</p>
+    <p>digitalWrite(buzzerPin, HIGH);</p>
+    <p>delay(50);</p>
+    <p>digitalWrite(buzzerPin, LOW);</p>
+    <p>delay(delayTime);</p>
+  <p>} else {</p>
+    <p>digitalWrite(buzzerPin, LOW); // No obstacle = silent</p>
+  <p>}</p>
+<p>}</p>
+
+</section>
+
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+  }
+</script>
+
+<section id="Finishing" style="text-align:center; background:#333; color:white;">
+  <h1>I hope you enjoyed the working of my second project</h1>
+  <p>If you haven't alread seen the webpage of <b>The Automated pet Feeder</b> then Click below </p>
+  <a href="C:\Omar\Automated pet feeder.html"><b> Click here </b> </a>
+</section>
+
+</body>
+</html>
